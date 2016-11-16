@@ -44,8 +44,8 @@ define(function (require, exports, module) {
             i = 0,
             filename = editor.document.file._name;
 
-        if ((event.type === "keydown") && (event.keyCode === KeyEvent.DOM_VK_TAB) && allowedExtensions.indexOf(filename.substr(filename.lastIndexOf("."))) != -1) {
             cmnd = getCommand(editor);
+        if ((event.type === "keydown") && (event.keyCode === KeyEvent.DOM_VK_TAB) && allowedExtensions.indexOf(filename.substr(filename.lastIndexOf("."))) != -1 && cmnd) {
             if (cmnd) {
                 text = doctypeText;
                 end = editor.getCursorPos();
